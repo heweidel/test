@@ -1,0 +1,76 @@
+redies的雪崩和击穿
+
+
+
+
+
+
+
+面向对象和面向过程的区别：
+面向过程:
+优点：性能比面向对象高，因为类调用时需要实例化，
+开销比较大，比较消耗资源
+缺点：没有面向对象易维护，易扩展，易复用
+面向对象：
+优点：易维护，易复用，易扩展，因为面向对象有封装，继承，多态的特性
+，可以设计出低藕合的系统，使系统更加灵活，更易于维护
+缺点：性能比面向过程低
+java语言的特点：
+1.简单易学，
+2.面向对象的继承，多态，封装
+3.跨平台性
+4.可靠性
+5.安全性
+6.支持多线程
+7.支持网络编程
+8.编译与解释共存
+1.GC的含义：
+
+
+gc是（Garbage Collectiond）是垃圾收集的意思，负责清除对象并释放缓存。
+java提供的gc功能可以自动检测对象是否超过作用域从而达到自动回收内存的目的，防止内存泄漏
+
+
+springboot的核心功能和使用优点
+核心功能:
+1.1: springboot项目为独立运行的spring项目,java -jar xx.jar即可运行.
+1.2: 内嵌servlet容器(可以选择内嵌: tomcat ,jetty等服务器.).
+1.3: 提供了starter的pom 配置 简化了 maven的配置.
+1.4: 自动配置spring容器中的bean.当不满足实际开发场景,可自定义bean的自动化配置.
+1.5: 准生产的应用监控(基于: ssh , http , telnet 对服务器运行的项目进行监控.).
+1.6: springboot无需做出xml配置,也不是通过代码生成来实现(通过条件注解.).
+使用优点:
+1.快速搭建项目,
+2,与主流框架集成无需配置集成.
+3.内嵌服务容器.
+4.具有应用监控.
+5.开发部署方便,后期与云计算平台集成方便(docket).
+
+.springboot中的application.properties配置文件是什么,有哪些配置.
+application.properties为boot项目中的一个系统自带的全局属性配置文件
+ 提供默认属性重写的作用. 可包含重写系统tomcat,spring,springmvc,mybatis
+等诸多默认配置属性:
+#全局配置文件: 重写视图解析器的资源地址.
+#页面默认前缀目录 【spring.mvc.view.prefix=/WEB-INF/jsp/】
+
+#?响应页面默认后缀【spring.mvc.view.suffix=.jsp】
+
+#静态资源目录配置,【spring.mvc.static-path-pattern=/static/**
+】
+#tomcat服务器的配置:
+server.port=8081
+server.servlet.context-path=/sb2
+
+#默认支持的日志记录:
+#logging.config=classpath:logback.xml 加载单独的日志配置文件.
+logging.file=d:/test/log.log
+logging.level.org.springframework.web=DEBUG
+
+#提供jdbc的基本配置:
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/c01?useUnicode=true&characterEncoding=utf-8
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.type=org.apache.commons.dbcp.BasicDataSource
+#提供mybatis的属性配置: 扫描.
+mybatis.mapper-locations=classpath:mapper/*_mapper.xml
